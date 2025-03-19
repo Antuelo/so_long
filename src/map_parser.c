@@ -6,12 +6,12 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:56:50 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/09 16:50:20 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:07:12 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
 #include "../get_next_line/get_next_line.h"
+#include "../include/so_long.h"
 #include "../libft/libft.h"
 #include <fcntl.h>
 #include <stdlib.h>
@@ -42,6 +42,7 @@ char	**read_map(const char *filename)
 	return (map);
 }
 
+/*c'est la divission de la funtion d'après*/
 void	count_map_elements(char **map, int *player, int *exit, int *collectible)
 {
 	int	i;
@@ -51,7 +52,7 @@ void	count_map_elements(char **map, int *player, int *exit, int *collectible)
 	while (map[i])
 	{
 		j = 0;
-		while (map[i][j])
+		while (map[i][j] && map[i][j] != '\n')
 		{
 			if (map[i][j] == 'P')
 				(*player)++;
@@ -67,6 +68,7 @@ void	count_map_elements(char **map, int *player, int *exit, int *collectible)
 	}
 }
 
+/*je regarde que tous les elements soient sur place*/
 int	validate_map_elements(char **map)
 {
 	int	has_player;
@@ -82,6 +84,7 @@ int	validate_map_elements(char **map)
 	return (1);
 }
 
+/*me fijo que todas las lineas del mapa sean iguales*/
 int	validate_map_shape(char **map)
 {
 	int		i;
