@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:57:16 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/18 17:41:56 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/21 18:44:16 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	move_player(t_game *game, int new_x, int new_y)
 			write(1, "YOU ARE WIN MY BROTHER!\n", 24);
 			close_game(game);
 		}
-		return ;
+		else
+			return ;
 	}
 	if (game->map[new_y][new_x] == 'C')
 	{
