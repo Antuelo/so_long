@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:16:28 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/18 14:59:03 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:07:48 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_game(t_game *game)
 	int	width;
 	int	height;
 
-	width = (ft_strlen(game->map[0]) * game->tile_size) - game->tile_size;
+	width = (ft_strlen(game->map[0]) * game->tile_size);
 	height = 0;
 	while (game->map[height])
 		height++;

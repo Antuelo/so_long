@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:56:50 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/18 17:07:12 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:48:44 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ char	**read_map(const char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
-		map[i++] = line;
+		map[i] = ft_strtrim(line, "\n");
+		free(line);
 		line = get_next_line(fd);
+		i++;
 	}
 	map[i] = NULL;
 	close(fd);
@@ -80,7 +82,7 @@ int	validate_map_elements(char **map)
 	has_collectible = 0;
 	count_map_elements(map, &has_player, &has_exit, &has_collectible);
 	if (has_player != 1 || has_exit < 1 || has_collectible < 1)
-		return (0);
+		return (print_error("problem with necessari ellements\n"));
 	return (1);
 }
 
@@ -89,15 +91,26 @@ int	validate_map_shape(char **map)
 {
 	int		i;
 	size_t	width;
+	int		height;
 
-	i = 0;
 	if (!map || !map[0])
 		return (0);
 	width = ft_strlen(map[0]);
+	i = 0;
 	while (map[i])
 	{
 		if (ft_strlen(map[i]) != width)
-			return (0);
+			return (print_error("No proportional map\n"));
+		if (map[i][0] != '1' || map[i][width - 1] != '1')
+			return (print_error("Imcompleted wall\n"));
+		i++;
+	}
+	height = i;
+	i = 0;
+	while (i < (int)width)
+	{
+		if (map[0][i] != '1' || map[height - 1][i] != '1')
+			return (print_error("Imcompleted wall\n"));
 		i++;
 	}
 	return (1);

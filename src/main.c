@@ -6,13 +6,24 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 14:30:00 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/21 19:22:16 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:44:44 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+int	validate_map(char **map)
+{
+	if (!map)
+		return (print_error("problem reading map\n"));
+	if (!validate_map_shape(map))
+		return (0);
+	if (!validate_map_elements(map))
+		return (0);
+	return (1);
+}
 
 void	compter_collectibles(t_game *game)
 {
@@ -65,12 +76,12 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (1);
 	game.map = read_map(argv[1]);
-	if (!game.map || !validate_map_shape(game.map)
-		|| !validate_map_elements(game.map))
+	if (!validate_map(game.map))
 	{
 		free_map(game.map);
 		return (1);
 	}
+	game.move = 0;
 	game.tile_size = 64;
 	init_game(&game);
 	load_images(&game);

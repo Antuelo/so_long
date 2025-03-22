@@ -6,13 +6,14 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:49:41 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/18 15:16:59 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:25:45 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <stdlib.h>
@@ -50,6 +51,7 @@ typedef struct s_game
 	int			player_y;
 	int			total_collectibles;
 	int			collected;
+	int			move;
 	t_textures	img;
 }				t_game;
 
@@ -64,10 +66,13 @@ void			free_map(char **map);
 // Rendu graphique
 void			render_map(t_game *game);
 void			load_images(t_game *game);
+int				print_error(char *msg);
 
 // Gestion des entrées (mouvement du joueur)
 void			find_player_position(t_game *game);
 int				handle_key(int keycode, t_game *game);
 void			move_player(t_game *game, int new_x, int new_y);
+void			ft_putnbr_fd(int n, int fd);
+char			*ft_strtrim(char const *s1, char const *set);
 
 #endif
