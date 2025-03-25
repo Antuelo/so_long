@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:25:31 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/22 15:30:59 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:22:19 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	close_game(t_game *game)
 	return (0);
 }
 
-int print_error(char *msg)
+int	print_error(char *msg)
 {
 	write(2, "Error\n", 6);
 	write(2, msg, ft_strlen(msg));

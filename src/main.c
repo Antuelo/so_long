@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 14:30:00 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/22 15:44:44 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:27:42 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	validate_map(char **map)
-{
-	if (!map)
-		return (print_error("problem reading map\n"));
-	if (!validate_map_shape(map))
-		return (0);
-	if (!validate_map_elements(map))
-		return (0);
-	return (1);
-}
-
 void	compter_collectibles(t_game *game)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (game->map[y])
@@ -46,8 +35,8 @@ void	compter_collectibles(t_game *game)
 
 void	find_player_position(t_game *game)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	y = 0;
 	game->total_collectibles = 0;
@@ -69,6 +58,19 @@ void	find_player_position(t_game *game)
 	}
 }
 
+int	validate_map(char **map, t_game *game)
+{
+	if (!map)
+		return (print_error("problem reading map\n"));
+	if (!validate_map_elements(map))
+		return (0);
+	if (!validate_map_shape(map))
+		return (0);
+	find_player_position(game);
+	validate_good_way(game);
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
@@ -76,7 +78,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (1);
 	game.map = read_map(argv[1]);
-	if (!validate_map(game.map))
+	if (!validate_map(game.map, &game))
 	{
 		free_map(game.map);
 		return (1);
