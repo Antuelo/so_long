@@ -6,14 +6,13 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:49:41 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/25 14:33:09 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:13:29 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <stdlib.h>
@@ -73,8 +72,13 @@ int				print_error(char *msg);
 void			find_player_position(t_game *game);
 int				handle_key(int keycode, t_game *game);
 void			move_player(t_game *game, int new_x, int new_y);
+
+//mis libft
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strdup(const char *s);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+size_t			ft_strlen(const char *h);
 
 #endif

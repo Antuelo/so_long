@@ -6,12 +6,11 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:16:28 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/22 15:07:48 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:13:47 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-#include "../libft/libft.h"
 #include "../minilibx-linux/mlx_int.h"
 
 void	init_game(t_game *game)

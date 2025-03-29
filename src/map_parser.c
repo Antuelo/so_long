@@ -6,13 +6,12 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:56:50 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/22 15:48:44 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:10:48 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../get_next_line/get_next_line.h"
 #include "../include/so_long.h"
-#include "../libft/libft.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
