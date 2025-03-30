@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:57:16 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/22 13:49:02 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/30 11:27:46 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	move_player(t_game *game, int new_x, int new_y)
 	{
 		if (game->collected == game->total_collectibles)
 		{
-			write(1, "YOU ARE WIN MY BROTHER!\n", 24);
 			game->move++;
+			ft_putnbr_fd(game->move, 1);
+			write(1, " movements\nYOU ARE WIN MY BROTHER!\n", 35);
 			close_game(game);
 		}
 		else
