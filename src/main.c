@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 14:30:00 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/25 14:27:42 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/30 11:46:53 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int	main(int argc, char **argv)
 	game.tile_size = 64;
 	init_game(&game);
 	load_images(&game);
-	find_player_position(&game);
 	compter_collectibles(&game);
 	render_map(&game);
 	mlx_hook(game.win, 2, 1L << 0, handle_key, &game);
