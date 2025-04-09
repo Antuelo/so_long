@@ -6,7 +6,7 @@
 /*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 14:30:00 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/30 11:52:47 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/03/30 11:55:28 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,4 @@ int	main(int argc, char **argv)
 	free_map(game.map);
 	return (0);
 }
-/*valgrind --leak-check=full ./so_long maps/map1.ber*/
+/*valgrind --leak-check=full ./so_long asset/little.ber*/
