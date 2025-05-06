@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
+/*   By: anoviedo <anoviedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:56:50 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/29 12:10:48 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:40:25 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	validate_map_elements(char **map)
 	has_collectible = 0;
 	count_map_elements(map, &has_player, &has_exit, &has_collectible);
 	if (has_player != 1 || has_exit < 1 || has_collectible < 1)
-		return (print_error("problem with necessari ellements\n"));
+		return (print_error("problem with necessary elements\n"));
 	return (1);
 }
 

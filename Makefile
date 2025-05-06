@@ -7,7 +7,7 @@ SRC = src/main.c src/map_parser.c src/init_game.c src/close_game.c \
 	  src/ft_putnbr_fd.c src/ft_strtrim.c src/ft_strdup.c
 
 OBJ = $(SRC:.c=.o)
-
+HEADER = includes
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 

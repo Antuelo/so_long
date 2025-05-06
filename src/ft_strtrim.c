@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
+/*   By: anoviedo <anoviedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:07:48 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/29 12:15:13 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:44:57 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	newstr(str, s1, start, end);
 	return (str);
 }
-/*
-int	main(void)
-{
-	char *palabra = "?!!?casa!?=??!";
-	char *set = "!=?";
-	char *result;
-
-	result = ft_strtrim(palabra, set);
-
-	printf("%s\n", result);
-	free(result);
-}
-*/

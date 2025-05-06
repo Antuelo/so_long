@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_good_way.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
+/*   By: anoviedo <anoviedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:36:57 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/25 14:38:26 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:24:31 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,13 @@ int	validate_path(char **map, int y, int x)
 
 	copy = copy_map(map);
 	if (!copy)
-		return (print_error("Error coping the map my brother\n"));
+		return (print_error("Error coping the map, my brother\n"));
 	flood_fill(copy, y, x);
 	if (has_unreachable_elements(copy))
 	{
 		free_map(copy);
-		return (print_error("No way possible mon pote\n"));
+		return (print_error(\
+			"No way possible, I don't want to stay locked up!!\n"));
 	}
 	free_map(copy);
 	return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoviedo <antuel@outlook.com>              +#+  +:+       +#+        */
+/*   By: anoviedo <anoviedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 14:30:00 by anoviedo          #+#    #+#             */
-/*   Updated: 2025/03/30 11:55:28 by anoviedo         ###   ########.fr       */
+/*   Updated: 2025/05/06 12:24:48 by anoviedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,3 @@ int	main(int argc, char **argv)
 	free_map(game.map);
 	return (0);
 }
-/*valgrind --leak-check=full ./so_long asset/little.ber*/
