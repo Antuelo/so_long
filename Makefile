@@ -17,15 +17,16 @@ MLX_FLAGS = -L$(MLX_DIR) -lmlx -lX11 -lXext
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(MLX_FLAGS)
+	@echo "Files created correctly =D"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
-
+	@rm -f $(OBJ)
+	@echo "files eliminated correctly =D"
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
