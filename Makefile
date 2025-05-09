@@ -25,7 +25,7 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
-	@echo "files eliminated correctly =D"
+	@echo "files eliminated correctly =B"
 fclean: clean
 	@rm -f $(NAME)
 
